@@ -37,6 +37,13 @@ public class PlayerMovement : MonoBehaviour
     {
         float movement = Input.GetAxis("Horizontal");
         _rig.velocity = new Vector2(movement * speed, _rig.velocity.y);
+
+        // idle 
+        if (movement == 0) {
+            return;
+        }
+
+        transform.eulerAngles = movement > 0 ? new Vector3(0, 180, 0) : new Vector3(0, 0, 0);
     }
 
     private void OnCollisionEnter2D(Collision2D other) {
