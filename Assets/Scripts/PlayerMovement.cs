@@ -177,5 +177,7 @@ public class PlayerMovement : MonoBehaviour
         if (!IsGrounded() && IsWallCling()) {
             _rig.velocity = new Vector2(_rig.velocity.x, Mathf.Clamp(_rig.velocity.y, -1f, float.MaxValue));
         }
+
+        // exemplo
     }
 }
