@@ -37,6 +37,7 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         Move();
+        WallSliding();
     }
 
     void CheckEarlyJump()
@@ -111,6 +112,10 @@ public class PlayerMovement : MonoBehaviour
 
     void Move()
     {
+        if (!IsGrounded() && IsWallCling()) {
+            return;
+        }
+
         _rig.velocity = new Vector2(_direction.x * speed, _rig.velocity.y);
 
         // idle 
@@ -165,5 +170,12 @@ public class PlayerMovement : MonoBehaviour
         Vector2 closestPoint = hit.ClosestPoint(transform.position);
         Vector2 jumpDirection = closestPoint.x > transform.position.x ? new Vector2(-1f,0f) : new Vector2(1f,0f);
         _rig.AddForce(jumpDirection * jumpForce, ForceMode2D.Impulse);
+    }
+
+    void WallSliding()
+    {
+        if (!IsGrounded() && IsWallCling()) {
+            _rig.velocity = new Vector2(_rig.velocity.x, Mathf.Clamp(_rig.velocity.y, -1f, float.MaxValue));
+        }
     }
 }
