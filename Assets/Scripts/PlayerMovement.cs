@@ -5,7 +5,12 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D _rig;
+
     private bool _isJumping;
+    private bool _isEarlyJumpEnabled;
+    private bool _hasEarlyJumped;
+
+    public LayerMask floorLayer;
 
     public float speed;
     public float jumpForce;
@@ -17,7 +22,8 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void Update() {
-        Jump();
+        CheckEarlyJump();
+        CheckJump();
     }
 
     void FixedUpdate()
@@ -25,12 +31,45 @@ public class PlayerMovement : MonoBehaviour
         Move();
     }
 
+    void CheckEarlyJump()
+    {
+        if (!_isEarlyJumpEnabled) {
+            return;
+        }
+
+        // Collider2D hit = Physics2D.OverlapBox(transform.position - new Vector3(0,0.35f,0), new Vector3(0.4f,0.1f,0), 0);
+        Collider2D hit = Physics2D.OverlapBox(transform.position - new Vector3(0,0.35f,0), new Vector3(1f, 1f, 0), 0, floorLayer);
+        if (hit != null && Input.GetKeyDown(KeyCode.Space)) {
+            _hasEarlyJumped = true;
+            Debug.Log(hit.name);
+        }
+    }
+
+    void CheckJump()
+    {
+        float verticalVelocity = (int)_rig.velocity.y;
+        if (!_isJumping && Input.GetKeyDown(KeyCode.Space) && verticalVelocity >= 0) {
+            Jump();
+        }
+    }
+
+    bool CheckTouchingGround()
+    {
+        return true;
+    }
+
+    void ExecuteEarlyJump()
+    {
+        if (_hasEarlyJumped) {
+            Debug.Log("this is a early jump");
+            Jump();
+        }
+    }
+
     void Jump()
     {
-        if (!_isJumping && Input.GetKeyDown(KeyCode.Space)) {
-            _isJumping = true;
-            _rig.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-        }
+        StartCoroutine(OnJump());
+        _rig.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
     }
 
     void Move()
@@ -47,6 +86,21 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void OnCollisionEnter2D(Collision2D other) {
+        _isEarlyJumpEnabled = false;
         _isJumping = false;
+        ExecuteEarlyJump();
+    }
+
+    private void OnDrawGizmos() {
+        // Gizmos.DrawWireCube(transform.position - new Vector3(0,0.35f,0), new Vector3(0.4f,0.1f,0));
+        Gizmos.DrawWireCube(transform.position - new Vector3(0,0.35f,0), new Vector3(1f,1f,0));
+    }
+
+    IEnumerator OnJump()
+    {
+        _hasEarlyJumped = false;
+        _isJumping = true;
+        yield return new WaitForSeconds(0.2f);
+        _isEarlyJumpEnabled = true;
     }
 }
