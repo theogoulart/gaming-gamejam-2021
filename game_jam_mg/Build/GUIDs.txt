@@ -1,0 +1,8 @@
+{21544918-583d-43c2-80bd-8bc76c571268} bank:/Master
+{b94969cc-2946-0f80-06f4-01399da414f0} bank:/Master.strings
+{f95ed043-cc2b-41b3-ac6d-ab87a597bd68} bus:/
+{38bc9dee-c707-4941-b8c1-9930bf933d63} bus:/Reverb
+{90925327-eaaf-48e2-bf90-4b3c30968f6b} bus:/music
+{18ed3dc6-bcd7-4708-a2c0-7c629e5c5584} bus:/sfx
+{3596cbe1-26ef-4656-8282-5b76338ddd40} event:/music/level_music_0
+{b69c16d4-c770-4b16-b8f6-342bd9a26bf1} event:/sfx/char/char_jump
