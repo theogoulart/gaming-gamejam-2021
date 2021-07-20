@@ -13,13 +13,18 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (scenes.Count == 0) {
-            foreach(EditorBuildSettingsScene scene in EditorBuildSettings.scenes)
-            {
-                if(scene.enabled)
-                    scenes.Add(scene.path);
-            }
-        }
+        // if (scenes.Count == 0) {
+        //     foreach(EditorBuildSettingsScene scene in EditorBuildSettings.scenes)
+        //     {
+        //         if(scene.enabled)
+        //             scenes.Add(scene.path);
+        //     }
+        // }
+        scenes.Add("MainMenu");
+        scenes.Add("Prototype Tutorial");
+        scenes.Add("Prototype 0");
+        scenes.Add("Prototype 1");
+        scenes.Add("Prototype 2");
 
         instance = this;
         levelIndex = PlayerPrefs.GetInt("LastLevelReached");
