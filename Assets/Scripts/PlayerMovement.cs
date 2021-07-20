@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D _rig;
     private Vector2 _direction;
 
+    private bool _isDashing;
     private bool _isJumping;
     private bool _isWallJumping;
     private bool _isEarlyJumpEnabled;
@@ -38,6 +39,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Move();
         WallSliding();
+        Dash();
     }
 
     void CheckEarlyJump()
@@ -75,6 +77,15 @@ public class PlayerMovement : MonoBehaviour
         return true;
     }
 
+    void Dash()
+    {
+        if (_isDashing) {
+            Debug.Log("dash");
+            // _rig.AddForce(Vector2.right * 6f, ForceMode2D.Impulse);
+            _rig.velocity = (Vector2.right) * 200f * Time.deltaTime;
+        }
+    }
+
     void ExecuteEarlyJump()
     {
         if (_hasEarlyJumped) {
@@ -87,7 +98,6 @@ public class PlayerMovement : MonoBehaviour
     {
         Collider2D hit = Physics2D.OverlapBox(transform.position - new Vector3(0,0.2f,0), new Vector3(.35f,.2f,0), 0, floorLayer);
         if (hit != null) {
-            Debug.Log("grounded");
             return true;
         }
 
@@ -145,6 +155,17 @@ public class PlayerMovement : MonoBehaviour
     void OnInput()
     {
         _direction = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        
+        if (!_isDashing && Input.GetKeyDown(KeyCode.LeftControl)) {
+            StartCoroutine(OnDash());
+        }
+    }
+
+    IEnumerator OnDash()
+    {
+        _isDashing = true;
+        yield return new WaitForSeconds(0.5f);
+        _isDashing = false;
     }
 
     IEnumerator OnJump()
