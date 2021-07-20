@@ -6,7 +6,12 @@ public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D _rig;
     private Vector2 _direction;
+    private Vector2 _lastXDirection = Vector2.right;
+    private Vector2 _dashDirection = Vector2.zero;
+    private Vector2 _wallJumpDirection;
 
+    private bool _jump;
+    private bool _isMovementFreezed;
     private bool _isDashing;
     private bool _isJumping;
     private bool _isWallJumping;
@@ -31,15 +36,16 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update() {
         CheckEarlyJump();
-        CheckJump();
         OnInput();
     }
 
     void FixedUpdate()
     {
+        CheckJump();
         Move();
         WallSliding();
         Dash();
+        WallJump();
     }
 
     void CheckEarlyJump()
@@ -57,7 +63,8 @@ public class PlayerMovement : MonoBehaviour
 
     void CheckJump()
     {
-        if (Input.GetKeyDown(KeyCode.Space)) {
+        if (_jump) {
+            _jump = false;
             bool isGrounded = IsGrounded();
             if (isGrounded) {
                 Jump();
@@ -66,7 +73,7 @@ public class PlayerMovement : MonoBehaviour
 
             bool isWallCling = IsWallCling();
             if (isWallCling) {
-                WallJump();
+                StartCoroutine(OnWallJump());
                 return;
             }
         }
@@ -80,9 +87,23 @@ public class PlayerMovement : MonoBehaviour
     void Dash()
     {
         if (_isDashing) {
-            Debug.Log("dash");
-            // _rig.AddForce(Vector2.right * 6f, ForceMode2D.Impulse);
-            _rig.velocity = (Vector2.right) * 200f * Time.deltaTime;
+            if (_dashDirection == Vector2.zero) {
+                if (IsGrounded()) {
+                    if (_direction.x > 0) {
+                        _dashDirection = Vector2.right;
+                    } else if (_direction.x < 0) {
+                        _dashDirection = Vector2.left;
+                    } else if (_direction == Vector2.up) {
+                        _dashDirection = Vector2.up;
+                    } else {
+                        _dashDirection = _lastXDirection;
+                    }
+                } else {
+                    _dashDirection = _direction;
+                }
+            }
+
+            _rig.velocity = _dashDirection * 300f * Time.deltaTime;
         }
     }
 
@@ -122,6 +143,10 @@ public class PlayerMovement : MonoBehaviour
 
     void Move()
     {
+        if (_isMovementFreezed || _isDashing) {
+            return;
+        }
+
         if (!IsGrounded() && IsWallCling()) {
             return;
         }
@@ -133,6 +158,7 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
 
+        _lastXDirection = _direction.x > 0 ? Vector2.right : Vector2.left;
         transform.eulerAngles = _direction.x > 0 ? new Vector3(0, 180, 0) : new Vector3(0, 0, 0);
     }
 
@@ -158,13 +184,23 @@ public class PlayerMovement : MonoBehaviour
         
         if (!_isDashing && Input.GetKeyDown(KeyCode.LeftControl)) {
             StartCoroutine(OnDash());
+            return;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space)) {
+            _jump = true;
+            return;
         }
     }
 
     IEnumerator OnDash()
     {
+        _isMovementFreezed = true;
+        yield return new WaitForSeconds(0.1f);
+        _isMovementFreezed = false;
         _isDashing = true;
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.25f);
+        _dashDirection = Vector2.zero;
         _isDashing = false;
     }
 
@@ -178,19 +214,23 @@ public class PlayerMovement : MonoBehaviour
 
     IEnumerator OnWallJump()
     {
+        Collider2D hit = Physics2D.OverlapBox(transform.position - new Vector3(0,0.1f,0), new Vector3(0.55f,.2f,0), 0, floorLayer);
+        Vector2 closestPoint = hit.ClosestPoint(transform.position);
+        _wallJumpDirection = closestPoint.x > transform.position.x ? (Vector2.up + Vector2.left) : (Vector2.up + Vector2.right);
         _isWallJumping = true;
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.1f);
         _isWallJumping = false;
     }
 
     void WallJump()
     {
+        if (!_isWallJumping) {
+            return;
+        }
+
         Debug.Log("wall jump");
-        StartCoroutine(OnWallJump());
-        Collider2D hit = Physics2D.OverlapBox(transform.position - new Vector3(0,0.1f,0), new Vector3(0.55f,.2f,0), 0, floorLayer);
-        Vector2 closestPoint = hit.ClosestPoint(transform.position);
-        Vector2 jumpDirection = closestPoint.x > transform.position.x ? new Vector2(-1f,0f) : new Vector2(1f,0f);
-        _rig.AddForce(jumpDirection * jumpForce, ForceMode2D.Impulse);
+        // _rig.velocity = _wallJumpDirection * 100f * Time.deltaTime;
+        _rig.AddForce(_wallJumpDirection * 80f * Time.deltaTime, ForceMode2D.Impulse);
     }
 
     void WallSliding()
@@ -198,7 +238,5 @@ public class PlayerMovement : MonoBehaviour
         if (!IsGrounded() && IsWallCling()) {
             _rig.velocity = new Vector2(_rig.velocity.x, Mathf.Clamp(_rig.velocity.y, -1f, float.MaxValue));
         }
-
-        // exemplo
     }
 }
