@@ -53,4 +53,9 @@ public class GameManager : MonoBehaviour
     {
         LoadLevelScene(0);
     }
+
+    public void RestartLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
 }

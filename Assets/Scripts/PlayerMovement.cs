@@ -103,8 +103,13 @@ public class PlayerMovement : MonoBehaviour
                 }
             }
 
-            _rig.velocity = _dashDirection * 300f * Time.deltaTime;
+            _rig.velocity = _dashDirection * 600f * Time.deltaTime;
         }
+    }
+
+    void Die()
+    {
+        GameManager.instance.RestartLevel();
     }
 
     void ExecuteEarlyJump()
@@ -117,7 +122,7 @@ public class PlayerMovement : MonoBehaviour
 
     bool IsGrounded()
     {
-        Collider2D hit = Physics2D.OverlapBox(transform.position - new Vector3(0,0.2f,0), new Vector3(.35f,.2f,0), 0, floorLayer);
+        Collider2D hit = Physics2D.OverlapBox(transform.position - new Vector3(0,0.23f,0), new Vector3(.35f,.2f,0), 0, floorLayer);
         if (hit != null) {
             return true;
         }
@@ -127,7 +132,7 @@ public class PlayerMovement : MonoBehaviour
 
     bool IsWallCling()
     {
-        Collider2D hit = Physics2D.OverlapBox(transform.position - new Vector3(0,0.1f,0), new Vector3(0.55f,.2f,0), 0, floorLayer);
+        Collider2D hit = Physics2D.OverlapBox(transform.position - new Vector3(0,0.1f,0), new Vector3(0.95f,.2f,0), 0, floorLayer);
         if (hit != null) {
             return true;
         }
@@ -159,7 +164,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         _lastXDirection = _direction.x > 0 ? Vector2.right : Vector2.left;
-        transform.eulerAngles = _direction.x > 0 ? new Vector3(0, 180, 0) : new Vector3(0, 0, 0);
+        transform.eulerAngles = _direction.x > 0 ? new Vector3(0, 0, 0) : new Vector3(0, 180, 0);
     }
 
     private void OnCollisionEnter2D(Collision2D other) {
@@ -170,12 +175,13 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnDrawGizmos() {
         // EarlyJump
+        // Gizmos.DrawWireCube(transform.position - new Vector3(0,0.5f,0), new Vector3(.3f,.4f,0));
         Gizmos.DrawWireCube(transform.position - new Vector3(0,0.5f,0), new Vector3(.3f,.4f,0));
         Gizmos.color = Color.green;
         // Grounded
-        Gizmos.DrawWireCube(transform.position - new Vector3(0,0.2f,0), new Vector3(.35f,.2f,0));
+        Gizmos.DrawWireCube(transform.position - new Vector3(0,0.23f,0), new Vector3(.35f,.2f,0));
         // WallCling
-        Gizmos.DrawWireCube(transform.position - new Vector3(0,0.1f,0), new Vector3(0.55f,.2f,0));
+        Gizmos.DrawWireCube(transform.position - new Vector3(0,0.1f,0), new Vector3(0.95f,.2f,0));
     }
 
     void OnInput()
@@ -199,7 +205,7 @@ public class PlayerMovement : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         _isMovementFreezed = false;
         _isDashing = true;
-        yield return new WaitForSeconds(0.25f);
+        yield return new WaitForSeconds(0.15f);
         _dashDirection = Vector2.zero;
         _isDashing = false;
     }
@@ -208,16 +214,25 @@ public class PlayerMovement : MonoBehaviour
     {
         _hasEarlyJumped = false;
         _isJumping = true;
+        FMODUnity.RuntimeManager.PlayOneShot("event:/sfx/char/char_jump", transform.position);
         yield return new WaitForSeconds(0.2f);
         _isEarlyJumpEnabled = true;
     }
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Hazard")) {
+            Die();
+        }
+    }
+
     IEnumerator OnWallJump()
     {
-        Collider2D hit = Physics2D.OverlapBox(transform.position - new Vector3(0,0.1f,0), new Vector3(0.55f,.2f,0), 0, floorLayer);
+        Collider2D hit = Physics2D.OverlapBox(transform.position - new Vector3(0,0.1f,0), new Vector3(0.95f,.2f,0), 0, floorLayer);
         Vector2 closestPoint = hit.ClosestPoint(transform.position);
         _wallJumpDirection = closestPoint.x > transform.position.x ? (Vector2.up + Vector2.left) : (Vector2.up + Vector2.right);
         _isWallJumping = true;
+        FMODUnity.RuntimeManager.PlayOneShot("event:/sfx/char/char_jump", transform.position);
         yield return new WaitForSeconds(0.1f);
         _isWallJumping = false;
     }
@@ -230,7 +245,7 @@ public class PlayerMovement : MonoBehaviour
 
         Debug.Log("wall jump");
         // _rig.velocity = _wallJumpDirection * 100f * Time.deltaTime;
-        _rig.AddForce(_wallJumpDirection * 80f * Time.deltaTime, ForceMode2D.Impulse);
+        _rig.AddForce(_wallJumpDirection * 100f * Time.deltaTime, ForceMode2D.Impulse);
     }
 
     void WallSliding()
