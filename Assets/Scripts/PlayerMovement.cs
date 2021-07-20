@@ -188,7 +188,7 @@ public class PlayerMovement : MonoBehaviour
     {
         _direction = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         
-        if (!_isDashing && Input.GetKeyDown(KeyCode.LeftControl)) {
+        if (!_isDashing && Input.GetKeyDown(KeyCode.M)) {
             StartCoroutine(OnDash());
             return;
         }
