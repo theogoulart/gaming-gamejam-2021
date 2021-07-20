@@ -8,7 +8,7 @@
 [LOG] SystemI::init                            : Output requires a sample rate of 192000Hz, resampling will occur.
 [LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x8000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 000001B04D1DCBC8 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 000001B04D1D8CF8 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -17,9 +17,17 @@
 [LOG] Manager::init                            : done.
 [LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 135)
 [LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 135)
-[LOG] SoundI::release                          : Chip_03_172bpm (000001B04D612D58)
-[LOG] SoundI::release                          :     Chip_03_172bpm (000001AF9B8E2568)
-[LOG] SoundI::release                          :     Chip_03_172bpm (000001B04D615C98)
+[LOG] SystemI::mixerSuspend                    : Suspending output.
+[LOG] SystemI::mixerResume                     : Resuming output.
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001AFA326C3A8
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001AFA326C3A8
+[LOG] SystemI::mixerSuspend                    : Suspending output.
+[LOG] SystemI::mixerResume                     : Resuming output.
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001AFA326C3A8
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001AFA326C3A8
+[LOG] SoundI::release                          : Chip_03_172bpm (000001AFA42D0C28)
+[LOG] SoundI::release                          :     Chip_03_172bpm (000001B0525EA098)
+[LOG] SoundI::release                          :     Chip_03_172bpm (000001AFA326C3A8)
 [LOG] Thread::callback                         : FMOD Studio update thread finished.
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
 [LOG] Profile::disconnectAll                   : Profiler disconnecting all clients

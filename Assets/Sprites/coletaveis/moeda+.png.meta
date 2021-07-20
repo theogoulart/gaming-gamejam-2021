@@ -59,6 +59,9 @@ TextureImporter:
   - first:
       213: 6559191777187703595
     second: moeda+_18
+  - first:
+      213: 7274003665108243764
+    second: moeda+_19
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -151,10 +154,10 @@ TextureImporter:
       name: moeda+_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 2
-        width: 12
-        height: 12
+        x: 0
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -172,10 +175,10 @@ TextureImporter:
       name: moeda+_1
       rect:
         serializedVersion: 2
-        x: 18
-        y: 2
-        width: 12
-        height: 12
+        x: 16
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -193,10 +196,10 @@ TextureImporter:
       name: moeda+_2
       rect:
         serializedVersion: 2
-        x: 34
-        y: 2
-        width: 12
-        height: 12
+        x: 32
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -214,10 +217,10 @@ TextureImporter:
       name: moeda+_3
       rect:
         serializedVersion: 2
-        x: 50
-        y: 2
-        width: 12
-        height: 12
+        x: 48
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -235,10 +238,10 @@ TextureImporter:
       name: moeda+_4
       rect:
         serializedVersion: 2
-        x: 66
-        y: 2
-        width: 12
-        height: 12
+        x: 64
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -256,10 +259,10 @@ TextureImporter:
       name: moeda+_5
       rect:
         serializedVersion: 2
-        x: 82
-        y: 2
-        width: 12
-        height: 12
+        x: 80
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -277,10 +280,10 @@ TextureImporter:
       name: moeda+_6
       rect:
         serializedVersion: 2
-        x: 98
-        y: 2
-        width: 12
-        height: 12
+        x: 96
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -298,10 +301,10 @@ TextureImporter:
       name: moeda+_7
       rect:
         serializedVersion: 2
-        x: 114
-        y: 2
-        width: 12
-        height: 12
+        x: 112
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -319,10 +322,10 @@ TextureImporter:
       name: moeda+_8
       rect:
         serializedVersion: 2
-        x: 130
-        y: 2
-        width: 12
-        height: 12
+        x: 128
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -340,10 +343,10 @@ TextureImporter:
       name: moeda+_9
       rect:
         serializedVersion: 2
-        x: 146
-        y: 2
-        width: 12
-        height: 12
+        x: 144
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -361,10 +364,10 @@ TextureImporter:
       name: moeda+_10
       rect:
         serializedVersion: 2
-        x: 163
-        y: 2
-        width: 10
-        height: 12
+        x: 160
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -382,10 +385,10 @@ TextureImporter:
       name: moeda+_11
       rect:
         serializedVersion: 2
-        x: 180
-        y: 2
-        width: 8
-        height: 12
+        x: 176
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -403,10 +406,10 @@ TextureImporter:
       name: moeda+_12
       rect:
         serializedVersion: 2
-        x: 197
-        y: 3
-        width: 6
-        height: 12
+        x: 192
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -424,10 +427,10 @@ TextureImporter:
       name: moeda+_13
       rect:
         serializedVersion: 2
-        x: 214
-        y: 4
-        width: 19
-        height: 12
+        x: 208
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -445,10 +448,10 @@ TextureImporter:
       name: moeda+_14
       rect:
         serializedVersion: 2
-        x: 246
-        y: 4
-        width: 4
-        height: 12
+        x: 224
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -466,10 +469,10 @@ TextureImporter:
       name: moeda+_15
       rect:
         serializedVersion: 2
-        x: 261
-        y: 3
-        width: 6
-        height: 12
+        x: 240
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -487,10 +490,10 @@ TextureImporter:
       name: moeda+_16
       rect:
         serializedVersion: 2
-        x: 276
-        y: 2
-        width: 8
-        height: 12
+        x: 256
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -508,10 +511,10 @@ TextureImporter:
       name: moeda+_17
       rect:
         serializedVersion: 2
-        x: 291
-        y: 2
-        width: 10
-        height: 12
+        x: 272
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -529,10 +532,10 @@ TextureImporter:
       name: moeda+_18
       rect:
         serializedVersion: 2
-        x: 306
-        y: 2
-        width: 12
-        height: 12
+        x: 288
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -542,6 +545,27 @@ TextureImporter:
       bones: []
       spriteID: b2bafe45b2ee60b50800000000000000
       internalID: 6559191777187703595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: moeda+_19
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4359aa94bc372f460800000000000000
+      internalID: 7274003665108243764
       vertices: []
       indices: 
       edges: []
