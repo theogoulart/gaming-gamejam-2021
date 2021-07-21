@@ -239,6 +239,12 @@ public class PlayerMovement : MonoBehaviour
     {
         if (other.CompareTag("Hazard")) {
             Die();
+            return;
+        }
+
+        if (other.CompareTag("Stone")) {
+            other.GetComponent<Stone>().Pick();
+            return;
         }
     }
 
