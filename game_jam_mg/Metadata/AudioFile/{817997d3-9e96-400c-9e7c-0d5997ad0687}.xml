@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{817997d3-9e96-400c-9e7c-0d5997ad0687}">
+		<property name="assetPath">
+			<value>Chip_04_152bpm.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>50.526333333333334</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{1c617eb8-515b-4c08-a52a-51d277e75662}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEditor;
+using FMODUnity;
 
 public class GameManager : MonoBehaviour
 {
     private List<string> scenes = new List<string>();
     public static GameManager instance;
     public int levelIndex;
+    public int musicProgressLevel;
+    private static FMOD.Studio.EventInstance Music;
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +37,11 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         
+    }
+    public void Progress (int musicProgressLevel)
+    {
+        Music = RuntimeManager.CreateInstance("event:/music/level_music_1");
+        Music.setParameterByName("Progress", musicProgressLevel);
     }
 
     public void Continue()

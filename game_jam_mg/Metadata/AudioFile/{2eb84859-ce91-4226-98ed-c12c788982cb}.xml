@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{2eb84859-ce91-4226-98ed-c12c788982cb}">
+		<property name="assetPath">
+			<value>Chip_04_intro_152bpm.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.5789583333333332</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{1c617eb8-515b-4c08-a52a-51d277e75662}</destination>
+		</relationship>
+	</object>
+</objects>

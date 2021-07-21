@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Floor
   - Hazard
+  - Music
   layers:
   - Default
   - TransparentFX
