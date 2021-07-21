@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D _rig;
+    private Animator _anim;
     private Vector2 _direction;
     private Vector2 _lastXDirection = Vector2.right;
     private Vector2 _dashDirection = Vector2.zero;
@@ -32,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         _rig = GetComponent<Rigidbody2D>();
+        _anim = GetComponent<Animator>();
     }
 
     private void Update() {
@@ -158,13 +160,19 @@ public class PlayerMovement : MonoBehaviour
 
         _rig.velocity = new Vector2(_direction.x * speed, _rig.velocity.y);
 
-        // idle 
-        if (_direction.x == 0) {
+        // idle
+        if (_direction == Vector2.zero) {
+            Debug.Log("0");
+            _anim.SetInteger("transition", 0);
             return;
+        } else if (IsGrounded()) {
+            Debug.Log("1");
+            _anim.SetInteger("transition", 1);
         }
 
         _lastXDirection = _direction.x > 0 ? Vector2.right : Vector2.left;
         transform.eulerAngles = _direction.x > 0 ? new Vector3(0, 0, 0) : new Vector3(0, 180, 0);
+
     }
 
     private void OnCollisionEnter2D(Collision2D other) {
