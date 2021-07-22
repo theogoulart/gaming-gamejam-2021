@@ -13,7 +13,7 @@ PrefabInstance:
       objectReference: {fileID: 243399587486041632, guid: 303ade0b66b1cc9418a036793352e314, type: 3}
     - target: {fileID: 2416455698186325574, guid: 0607c295bdfb57a4db627273f12a772f, type: 3}
       propertyPath: m_Name
-      value: RedStone
+      value: RedStone Variant
       objectReference: {fileID: 0}
     - target: {fileID: 5145625851249518581, guid: 0607c295bdfb57a4db627273f12a772f, type: 3}
       propertyPath: m_RootOrder
@@ -21,11 +21,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5145625851249518581, guid: 0607c295bdfb57a4db627273f12a772f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.36
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5145625851249518581, guid: 0607c295bdfb57a4db627273f12a772f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8.45
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5145625851249518581, guid: 0607c295bdfb57a4db627273f12a772f, type: 3}
       propertyPath: m_LocalPosition.z

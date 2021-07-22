@@ -13,7 +13,7 @@ PrefabInstance:
       objectReference: {fileID: -4363900812059298463, guid: e5695bb1ae8a97845bcb0b3a30ae02ed, type: 3}
     - target: {fileID: 2416455698186325574, guid: 0607c295bdfb57a4db627273f12a772f, type: 3}
       propertyPath: m_Name
-      value: BlueStone
+      value: BlueStone Variant
       objectReference: {fileID: 0}
     - target: {fileID: 5145625851249518581, guid: 0607c295bdfb57a4db627273f12a772f, type: 3}
       propertyPath: m_RootOrder
@@ -21,11 +21,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5145625851249518581, guid: 0607c295bdfb57a4db627273f12a772f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.83
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5145625851249518581, guid: 0607c295bdfb57a4db627273f12a772f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8.45
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5145625851249518581, guid: 0607c295bdfb57a4db627273f12a772f, type: 3}
       propertyPath: m_LocalPosition.z
