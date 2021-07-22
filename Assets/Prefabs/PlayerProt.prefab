@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7520463610825186818}
   - component: {fileID: 7520463610825186819}
   - component: {fileID: 7520463610825186823}
+  - component: {fileID: -9060942881844808037}
   m_Layer: 0
   m_Name: PlayerProt
   m_TagString: Player
@@ -144,8 +145,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b53a6147ad2488448ea1fe52d130161, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inputsound: event:/sfx/char/char_walk
+  walkingspeed: 0.5
   floorLayer:
     serializedVersion: 2
     m_Bits: 64
   speed: 5
   jumpForce: 15
+--- !u!114 &-9060942881844808037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7520463610825186940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 7520463610825186940}
+  ListenerNumber: -1
