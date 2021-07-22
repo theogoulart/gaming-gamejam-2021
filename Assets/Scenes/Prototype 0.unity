@@ -2735,6 +2735,31 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
+--- !u!1 &1181093763 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8517734991078412739, guid: c40a57d3cb019624ebbf7636f2c1b2a9, type: 3}
+  m_PrefabInstance: {fileID: 8517734990989060543}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1181093767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1181093763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a160d838ff8b4b4693ac20007e008c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AssetsPPU: 16
+  m_RefResolutionX: 256
+  m_RefResolutionY: 256
+  m_UpscaleRT: 1
+  m_PixelSnapping: 1
+  m_CropFrameX: 0
+  m_CropFrameY: 0
+  m_StretchFill: 0
 --- !u!1 &1232659661
 GameObject:
   m_ObjectHideFlags: 0
@@ -2924,6 +2949,30 @@ PrefabInstance:
     - target: {fileID: 8517734989855668712, guid: c40a57d3cb019624ebbf7636f2c1b2a9, type: 3}
       propertyPath: m_Name
       value: Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 8517734991078412736, guid: c40a57d3cb019624ebbf7636f2c1b2a9, type: 3}
+      propertyPath: m_ForceIntoRT
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8517734991078412736, guid: c40a57d3cb019624ebbf7636f2c1b2a9, type: 3}
+      propertyPath: orthographic size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8517734991078412736, guid: c40a57d3cb019624ebbf7636f2c1b2a9, type: 3}
+      propertyPath: m_NormalizedViewPortRect.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8517734991078412736, guid: c40a57d3cb019624ebbf7636f2c1b2a9, type: 3}
+      propertyPath: m_NormalizedViewPortRect.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8517734991078412736, guid: c40a57d3cb019624ebbf7636f2c1b2a9, type: 3}
+      propertyPath: m_NormalizedViewPortRect.width
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8517734991078412736, guid: c40a57d3cb019624ebbf7636f2c1b2a9, type: 3}
+      propertyPath: m_NormalizedViewPortRect.height
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c40a57d3cb019624ebbf7636f2c1b2a9, type: 3}

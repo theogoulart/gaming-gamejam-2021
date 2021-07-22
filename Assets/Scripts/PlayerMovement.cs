@@ -21,6 +21,10 @@ public class PlayerMovement : MonoBehaviour
     private bool _isEarlyJumpEnabled;
     private bool _hasEarlyJumped;
 
+    public GameObject defaultBody;
+    public GameObject blueBody;
+    public GameObject greenBody;
+    public GameObject redBody;
     public LayerMask floorLayer;
     public Vector2 direction
     { 
@@ -118,6 +122,7 @@ public class PlayerMovement : MonoBehaviour
     void Die()
     {
         FMODUnity.RuntimeManager.PlayOneShot("event:/sfx/char/char_death", transform.position);
+        _anim.SetTrigger("die");
         GameManager.instance.GameOver();
     }
 
@@ -233,6 +238,7 @@ public class PlayerMovement : MonoBehaviour
         _hasEarlyJumped = false;
         _isJumping = true;
         FMODUnity.RuntimeManager.PlayOneShot("event:/sfx/char/char_jump", transform.position);
+        _anim.SetTrigger("jump");
         yield return new WaitForSeconds(0.2f);
         _isEarlyJumpEnabled = true;
     }

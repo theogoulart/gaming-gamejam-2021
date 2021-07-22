@@ -79,7 +79,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator OnGameOver()
     {
-        yield return new WaitForSeconds(.2f);
+        yield return new WaitForSeconds(.5f);
         RestartLevel();
     }
 
