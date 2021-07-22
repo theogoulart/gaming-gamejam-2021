@@ -10,6 +10,7 @@ TagManager:
   - Stone
   - Platform
   - Coin
+  - CameraPrefab
   layers:
   - Default
   - TransparentFX

@@ -12,25 +12,29 @@ public class GameManager : MonoBehaviour
     public int levelIndex;
     public int musicProgressLevel;
     private static FMOD.Studio.EventInstance Music;
+    private CameraShake cameraShake;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        // if (scenes.Count == 0) {
-        //     foreach(EditorBuildSettingsScene scene in EditorBuildSettings.scenes)
-        //     {
-        //         if(scene.enabled)
-        //             scenes.Add(scene.path);
-        //     }
-        // }
+        #if UNITY_EDITOR
+        if (scenes.Count == 0) {
+            foreach(EditorBuildSettingsScene scene in EditorBuildSettings.scenes)
+            {
+                if(scene.enabled)
+                    scenes.Add(scene.path);
+            }
+        }
+        #else
         scenes.Add("MainMenu");
         scenes.Add("Prototype Tutorial");
         scenes.Add("Prototype 0");
         scenes.Add("Prototype 1");
         scenes.Add("Prototype 2");
-
+        #endif
         instance = this;
         levelIndex = PlayerPrefs.GetInt("LastLevelReached");
+        cameraShake = GameObject.FindGameObjectWithTag("CameraPrefab").GetComponent<CameraShake>();
     }
 
     // Update is called once per frame
@@ -65,6 +69,18 @@ public class GameManager : MonoBehaviour
     public void NewGame()
     {
         LoadLevelScene(0);
+    }
+
+    public void GameOver()
+    {
+        cameraShake.Shake(0.05f, 0.1f);
+        StartCoroutine(OnGameOver());
+    }
+
+    IEnumerator OnGameOver()
+    {
+        yield return new WaitForSeconds(.2f);
+        RestartLevel();
     }
 
     public void RestartLevel()

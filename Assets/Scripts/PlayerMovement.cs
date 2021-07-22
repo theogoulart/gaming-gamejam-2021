@@ -117,8 +117,8 @@ public class PlayerMovement : MonoBehaviour
 
     void Die()
     {
-        GameManager.instance.RestartLevel();
         FMODUnity.RuntimeManager.PlayOneShot("event:/sfx/char/char_death", transform.position);
+        GameManager.instance.GameOver();
     }
 
     void ExecuteEarlyJump()
