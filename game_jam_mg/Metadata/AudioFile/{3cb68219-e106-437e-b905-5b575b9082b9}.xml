@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.00.00">
-	<object class="AudioFile" id="{ce6c66cd-017e-4add-a246-5317d53c9792}">
+	<object class="AudioFile" id="{3cb68219-e106-437e-b905-5b575b9082b9}">
 		<property name="assetPath">
-			<value>Char_land_01.wav</value>
+			<value>Char_dash_01.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>
@@ -11,7 +11,7 @@
 			<value>2</value>
 		</property>
 		<property name="length">
-			<value>0.78947845804988659</value>
+			<value>1.18421768707483</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{1c617eb8-515b-4c08-a52a-51d277e75662}</destination>

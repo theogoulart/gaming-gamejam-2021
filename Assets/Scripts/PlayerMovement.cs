@@ -186,6 +186,7 @@ public class PlayerMovement : MonoBehaviour
         _isEarlyJumpEnabled = false;
         _isJumping = false;
         ExecuteEarlyJump();
+        FMODUnity.RuntimeManager.PlayOneShot("event:/sfx/char/char_land", transform.position);
     }
 
     private void OnDrawGizmos() {
@@ -216,6 +217,7 @@ public class PlayerMovement : MonoBehaviour
 
     IEnumerator OnDash()
     {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/sfx/char/char_dash", transform.position);
         _isDashingEnabled = false;
         _isMovementFreezed = true;
         yield return new WaitForSeconds(0.1f);
