@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 _lastXDirection = Vector2.right;
     private Vector2 _dashDirection = Vector2.zero;
     private Vector2 _wallJumpDirection;
+    private CameraShake cameraShake;
 
     private bool _jump;
     private bool _isMovementFreezed;
@@ -42,6 +43,7 @@ public class PlayerMovement : MonoBehaviour
     {
         _rig = GetComponent<Rigidbody2D>();
         _anim = GetComponent<Animator>();
+        cameraShake = GameObject.FindGameObjectWithTag("CameraPrefab").GetComponent<CameraShake>();
     }
 
     private void Update() {
@@ -236,12 +238,16 @@ public class PlayerMovement : MonoBehaviour
         FMODUnity.RuntimeManager.PlayOneShot("event:/sfx/char/char_dash", transform.position);
         _isDashingEnabled = false;
         _isMovementFreezed = true;
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.15f);
         _isMovementFreezed = false;
         _isDashing = true;
+        cameraShake.Shake(0.02f, 0.1f);
         yield return new WaitForSeconds(0.15f);
         _dashDirection = Vector2.zero;
         _isDashing = false;
+        if (IsTouchingWall() || IsGrounded()) {
+            _isDashingEnabled = true;
+        }
     }
 
     IEnumerator OnJump()
