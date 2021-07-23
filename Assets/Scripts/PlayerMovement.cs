@@ -58,6 +58,14 @@ public class PlayerMovement : MonoBehaviour
         WallJump();
     }
 
+    void ChangeColor(string color)
+    {
+        blueBody.SetActive(color == "Blue");
+        defaultBody.SetActive(color == "Gray");
+        greenBody.SetActive(color == "Green");
+        redBody.SetActive(color == "Red");
+    }
+
     void CheckEarlyJump()
     {
         if (!_isEarlyJumpEnabled) {
@@ -251,7 +259,9 @@ public class PlayerMovement : MonoBehaviour
         }
 
         if (other.CompareTag("Stone")) {
-            other.GetComponent<Stone>().Pick();
+            Stone stone = other.GetComponent<Stone>();
+            ChangeColor(stone.color);
+            stone.Pick();
             return;
         }
     }
