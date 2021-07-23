@@ -186,17 +186,21 @@ public class PlayerMovement : MonoBehaviour
             return;
         } else if (IsGrounded()) {
             _anim.SetInteger("transition", 1);
+        } else {
+            _anim.SetInteger("transition", 0);
         }
 
         _lastXDirection = _direction.x > 0 ? Vector2.right : Vector2.left;
         transform.eulerAngles = _direction.x > 0 ? new Vector3(0, 0, 0) : new Vector3(0, 180, 0);
-
     }
 
     private void OnCollisionEnter2D(Collision2D other) {
-        _isDashingEnabled = true;
-        _isEarlyJumpEnabled = false;
-        _isJumping = false;
+        if (IsTouchingWall() || IsGrounded()) {
+            _isDashingEnabled = true;
+            _isEarlyJumpEnabled = false;
+            _isJumping = false;
+        }
+
         ExecuteEarlyJump();
         FMODUnity.RuntimeManager.PlayOneShot("event:/sfx/char/char_land", transform.position);
     }
@@ -292,6 +296,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (IsTouchingWall() && !IsGrounded() && _rig.velocity.y < 0 && _direction.x != 0) {
             _isWallSliding = true;
+            transform.eulerAngles = _lastXDirection == Vector2.left ? new Vector3(0, 0, 0) : new Vector3(0, 180, 0);
             _anim.SetInteger("transition", 2);
             return;
         }
