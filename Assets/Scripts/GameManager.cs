@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        FindObjectOfType<MusicPlayer>().ChangeMusicParameter(musicProgressLevel); 
+        // FindObjectOfType<MusicPlayer>().ChangeMusicParameter(musicProgressLevel); 
     }
 
     public void Continue()
