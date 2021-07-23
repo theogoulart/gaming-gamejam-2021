@@ -220,10 +220,10 @@ public class PlayerMovement : MonoBehaviour
         Gizmos.DrawWireCube(transform.position - new Vector3(0,0.1f,0), new Vector3(0.85f,.2f,0));
         // Damage detection
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position + (Vector3.up * 0.5f), 0.2f);
-        Gizmos.DrawWireSphere(transform.position + (Vector3.right * 0.5f), 0.2f);
-        Gizmos.DrawWireSphere(transform.position + (Vector3.down * 0.5f), 0.2f);
-        Gizmos.DrawWireSphere(transform.position + (Vector3.left * 0.5f), 0.2f);
+        Gizmos.DrawWireSphere(transform.position + (Vector3.up * 0.5f), 0.5f);
+        Gizmos.DrawWireSphere(transform.position + (Vector3.right * 0.5f), 0.5f);
+        Gizmos.DrawWireSphere(transform.position + (Vector3.down * 0.5f), 0.5f);
+        Gizmos.DrawWireSphere(transform.position + (Vector3.left * 0.5f), 0.5f);
     }
 
     void OnInput()
@@ -274,7 +274,7 @@ public class PlayerMovement : MonoBehaviour
             Spikes spike = other.GetComponent<Spikes>();
             if (spike != null) {
                 if (spike.pointingDirection == Vector3.up) {
-                    Collider2D[] col = Physics2D.OverlapCircleAll(transform.position + (Vector3.down * 0.5f), 0.2f);
+                    Collider2D[] col = Physics2D.OverlapCircleAll(transform.position + (Vector3.down * 0.5f), 0.5f);
                     foreach (var item in col)
                     {
                         if (item.name == "UpwardSpikes") {
@@ -282,7 +282,7 @@ public class PlayerMovement : MonoBehaviour
                         }
                     }
                 } else if (spike.pointingDirection == Vector3.right) {
-                    Collider2D[] col = Physics2D.OverlapCircleAll(transform.position + (Vector3.left * 0.5f), 0.2f);
+                    Collider2D[] col = Physics2D.OverlapCircleAll(transform.position + (Vector3.left * 0.5f), 0.5f);
                     foreach (var item in col)
                     {
                         if (item.name == "RightySpikes") {
@@ -290,7 +290,7 @@ public class PlayerMovement : MonoBehaviour
                         }
                     }
                 } else if (spike.pointingDirection == Vector3.down) {
-                    Collider2D[] col = Physics2D.OverlapCircleAll(transform.position + (Vector3.up * 0.5f), 0.2f);
+                    Collider2D[] col = Physics2D.OverlapCircleAll(transform.position + (Vector3.up * 0.5f), 0.5f);
                     foreach (var item in col)
                     {
                         if (item.name == "DownwardSpikes") {
@@ -298,7 +298,7 @@ public class PlayerMovement : MonoBehaviour
                         }
                     }
                 } else if (spike.pointingDirection == Vector3.left) {
-                    Collider2D[] col = Physics2D.OverlapCircleAll(transform.position + (Vector3.right * 0.5f), 0.2f);
+                    Collider2D[] col = Physics2D.OverlapCircleAll(transform.position + (Vector3.right * 0.5f), 0.5f);
                     foreach (var item in col)
                     {
                         if (item.name == "LeftySpikes") {
