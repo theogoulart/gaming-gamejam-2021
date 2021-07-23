@@ -75,7 +75,6 @@ public class PlayerMovement : MonoBehaviour
         Collider2D hit = Physics2D.OverlapBox(transform.position - new Vector3(0,0.5f,0), new Vector3(.3f,.4f,0), 0, floorLayer);
         if (hit != null && Input.GetKeyDown(KeyCode.Space)) {
             _hasEarlyJumped = true;
-            Debug.Log(hit.name);
         }
     }
 
@@ -137,7 +136,6 @@ public class PlayerMovement : MonoBehaviour
     void ExecuteEarlyJump()
     {
         if (_hasEarlyJumped) {
-            Debug.Log("this is a early jump");
             Jump();
         }
     }
@@ -156,6 +154,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Collider2D hit = Physics2D.OverlapBox(transform.position - new Vector3(0,0.1f,0), new Vector3(0.85f,.2f,0), 0, floorLayer);
         if (hit != null) {
+            Debug.Log(hit.name);
             return true;
         }
 
@@ -274,6 +273,7 @@ public class PlayerMovement : MonoBehaviour
         _isWallJumping = true;
         _isMovementFreezed = true;
         FMODUnity.RuntimeManager.PlayOneShot("event:/sfx/char/char_jump", transform.position);
+        _anim.SetTrigger("jump");
         yield return new WaitForSeconds(wallJumpInterval);
         _isWallJumping = false;
         _isMovementFreezed = false;
@@ -285,7 +285,6 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
 
-        Debug.Log(_wallJumpDirection);
         _rig.AddForce(_wallJumpDirection * wallJumpSpeed * Time.deltaTime, ForceMode2D.Impulse);
     }
 
@@ -293,6 +292,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (IsTouchingWall() && !IsGrounded() && _rig.velocity.y < 0 && _direction.x != 0) {
             _isWallSliding = true;
+            _anim.SetInteger("transition", 2);
             return;
         }
 
