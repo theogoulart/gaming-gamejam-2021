@@ -1,7 +1,55 @@
 fileFormatVersion: 2
 guid: 95e8813ec3b3581478eb433e0342d5c6
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -1896835992799279059
+    second: plataformas (fazer prefabs) 1_0
+  - first:
+      213: 3062586637586247684
+    second: plataformas (fazer prefabs) 1_1
+  - first:
+      213: 2722347197803382536
+    second: plataformas (fazer prefabs) 1_2
+  - first:
+      213: 6419577558687355363
+    second: plataformas (fazer prefabs) 1_3
+  - first:
+      213: -339059063416699290
+    second: plataformas (fazer prefabs) 1_4
+  - first:
+      213: -989630454843424432
+    second: plataformas (fazer prefabs) 1_5
+  - first:
+      213: -4273273275803526300
+    second: plataformas (fazer prefabs) 1_6
+  - first:
+      213: -1098370688929273035
+    second: plataformas (fazer prefabs) 1_7
+  - first:
+      213: -2984880898865770699
+    second: plataformas (fazer prefabs) 1_8
+  - first:
+      213: -2696490048290810802
+    second: plataformas (fazer prefabs) 1_9
+  - first:
+      213: -4260971693493105282
+    second: plataformas (fazer prefabs) 1_10
+  - first:
+      213: -7258898889657542764
+    second: plataformas (fazer prefabs) 1_11
+  - first:
+      213: 8319767918671962218
+    second: plataformas (fazer prefabs) 1_12
+  - first:
+      213: -3334847866433768192
+    second: plataformas (fazer prefabs) 1_13
+  - first:
+      213: 7894651738044041518
+    second: plataformas (fazer prefabs) 1_14
+  - first:
+      213: -7868401495271852889
+    second: plataformas (fazer prefabs) 1_15
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -41,12 +89,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 0
   alphaUsage: 1
@@ -67,7 +115,19 @@ TextureImporter:
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 4
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
     textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
@@ -77,7 +137,175 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: plataformas (fazer prefabs) 1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 37
+        width: 16
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d280604e6b51da5e0800000000000000
+      internalID: -1896835992799279059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plataformas (fazer prefabs) 1_1
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 37
+        width: 32
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 400bf23125e708a20800000000000000
+      internalID: 3062586637586247684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plataformas (fazer prefabs) 1_2
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 37
+        width: 16
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 807c9505a58b7c520800000000000000
+      internalID: 2722347197803382536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plataformas (fazer prefabs) 1_3
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 21
+        width: 32
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e111a9f6cbe61950800000000000000
+      internalID: 6419577558687355363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plataformas (fazer prefabs) 1_4
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 21
+        width: 32
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 666cb27049b6b4bf0800000000000000
+      internalID: -339059063416699290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plataformas (fazer prefabs) 1_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5
+        width: 16
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 051462838502442f0800000000000000
+      internalID: -989630454843424432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plataformas (fazer prefabs) 1_6
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 5
+        width: 32
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46b9f8fa89842b4c0800000000000000
+      internalID: -4273273275803526300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plataformas (fazer prefabs) 1_7
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 5
+        width: 16
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53b6ba68dadc1c0f0800000000000000
+      internalID: -1098370688929273035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
