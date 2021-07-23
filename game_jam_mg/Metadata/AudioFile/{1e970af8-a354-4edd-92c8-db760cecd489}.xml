@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{1e970af8-a354-4edd-92c8-db760cecd489}">
+		<property name="assetPath">
+			<value>Chip_06_148bpm_loop_0.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>6.4865000000000004</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{1c617eb8-515b-4c08-a52a-51d277e75662}</destination>
+		</relationship>
+	</object>
+</objects>
