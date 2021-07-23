@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4035811871058674473}
   - component: {fileID: 7963071149690166695}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: DeathLine
   m_TagString: Hazard
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -55,7 +55,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 25, y: 1}
+  m_Size: {x: 44.56, y: 1}
   m_EdgeRadius: 0
 --- !u!1 &988808162483996464
 GameObject:
@@ -278,7 +278,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8517734989855668712}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.1742123, y: -1.8803202, z: -0.7491625}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8517734991078412607}
@@ -340,7 +340,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8517734991078412739}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.173, y: -0.119, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8517734989855668711}
