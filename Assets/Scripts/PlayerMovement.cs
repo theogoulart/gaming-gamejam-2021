@@ -126,7 +126,7 @@ public class PlayerMovement : MonoBehaviour
                 }
             }
 
-            _rig.velocity = _dashDirection * 600f * Time.deltaTime;
+            _rig.velocity = _dashDirection * 450f * Time.deltaTime;
         }
     }
 

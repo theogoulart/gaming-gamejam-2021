@@ -9,15 +9,33 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: ac7348c2630d6764c93e8787587e8228
   - enabled: 1
-    path: Assets/Scenes/Prototype Tutorial.unity
-    guid: 1e59022f36970784f9f0e32964d98e5b
+    path: Assets/Scenes/TESTELEVEL1.unity
+    guid: d2808ecd7402ebd4bae5ebe5876936c1
   - enabled: 1
-    path: Assets/Scenes/Prototype 0.unity
-    guid: c72f28e40ba93124ba388e59f771b9c5
+    path: Assets/Scenes/TESTELEVEL2.unity
+    guid: 326e7600e89287842b975d492661484a
   - enabled: 1
-    path: Assets/Scenes/Prototype 1.unity
-    guid: 4ef2018876964ed41b6d1ff581addbec
+    path: Assets/Scenes/TESTELEVEL3.unity
+    guid: 56b102637808d024687fe4239eac181d
   - enabled: 1
-    path: Assets/Scenes/Prototype 2.unity
-    guid: c61cc8e3967615f429eaa5e7c9e98def
+    path: Assets/Scenes/TESTELEVEL4.unity
+    guid: 1f0a6f0aa8f3d664a9e1f7ed708af719
+  - enabled: 1
+    path: Assets/Scenes/TESTELEVEL5.unity
+    guid: 3144243d3593c6842a009065a6d09aa1
+  - enabled: 1
+    path: Assets/Scenes/TESTELEVEL6.unity
+    guid: d2c1ae2a0b85f28498585e4cb03843dd
+  - enabled: 1
+    path: Assets/Scenes/TESTELEVEL7.unity
+    guid: 5bb3e255682e34b45b1f3eccfe3b7d89
+  - enabled: 1
+    path: Assets/Scenes/TESTELEVEL8.unity
+    guid: b17bb98ef7f1638438160f4e9b53d119
+  - enabled: 1
+    path: Assets/Scenes/TESTELEVEL9.unity
+    guid: 7766abf9cc425fb45991f0e4a5fab5f5
+  - enabled: 1
+    path: Assets/Scenes/TESTELEVEL10.unity
+    guid: 89394153c67f88c4395621630cf2feb3
   m_configObjects: {}
