@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{f04f7b23-dfab-4d72-822c-dc93a4d946cf}">
+		<property name="assetPath">
+			<value>Chip_05_114bpm_full.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>101.05264583333333</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{1c617eb8-515b-4c08-a52a-51d277e75662}</destination>
+		</relationship>
+	</object>
+</objects>

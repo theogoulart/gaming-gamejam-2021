@@ -620,7 +620,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionTag: 
-  Event: event:/music/level_music_2
+  Event: event:/music/level_music_4
   PlayEvent: 1
   StopEvent: 2
   AllowFadeout: 1

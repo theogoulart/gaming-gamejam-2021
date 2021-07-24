@@ -11,7 +11,6 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public int levelIndex;
     public int musicProgressLevel;
-    private static FMOD.Studio.EventInstance Music;
     private CameraShake cameraShake;
 
     // Start is called before the first frame update
@@ -40,12 +39,12 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+       
     }
-    public void Progress (int musicProgressLevel)
+
+    void Start()
     {
-        Music = RuntimeManager.CreateInstance("event:/music/level_music_1");
-        Music.setParameterByName("Progress", musicProgressLevel);
+        FindObjectOfType<MusicPlayer>().ChangeMusicParameter(musicProgressLevel); 
     }
 
     public void Continue()
