@@ -23,28 +23,37 @@ public class GameManager : MonoBehaviour
             instance = this;
         }
 
-        #if UNITY_EDITOR
-        if (scenes.Count == 0) {
-            foreach(EditorBuildSettingsScene scene in EditorBuildSettings.scenes)
-            {
-                if(scene.enabled)
-                    scenes.Add(scene.path);
-            }
-        }
-        #else
+        // #if UNITY_EDITOR
+        // if (scenes.Count == 0) {
+        //     foreach(EditorBuildSettingsScene scene in EditorBuildSettings.scenes)
+        //     {
+        //         if(scene.enabled)
+        //             scenes.Add(scene.path);
+        //     }
+        // }
+        // #else
         scenes.Add("MainMenu");
-        scenes.Add("Prototype Tutorial");
-        scenes.Add("Prototype 0");
-        scenes.Add("Prototype 1");
-        scenes.Add("Prototype 2");
-        #endif
+        scenes.Add("TESTELEVEL1");
+        scenes.Add("TESTELEVEL2");
+        scenes.Add("TESTELEVEL3");
+        scenes.Add("TESTELEVEL4");
+        scenes.Add("TESTELEVEL5");
+        scenes.Add("TESTELEVEL6");
+        scenes.Add("TESTELEVEL7");
+        scenes.Add("TESTELEVEL8");
+        scenes.Add("TESTELEVEL9");
+        scenes.Add("TESTELEVEL10");
+        // #endif
         levelIndex = PlayerPrefs.GetInt("LastLevelReached");
         deathCount = PlayerPrefs.GetInt("DeathCount");
 
-        try {
-            GameObject.FindGameObjectWithTag("CameraPrefab").TryGetComponent<CameraShake>(out cameraShake);
-        } catch (System.Exception e) {
-            Debug.Log("no camera shake" + e.Message);
+        GameObject camShakeObj = GameObject.FindGameObjectWithTag("CameraPrefab");
+        if (camShakeObj != null) {
+            try {
+                cameraShake = camShakeObj.GetComponent<CameraShake>();
+            } catch (System.Exception e) {
+                Debug.Log("no camera shake" + e.Message);
+            }
         }
     }
 
@@ -58,14 +67,6 @@ public class GameManager : MonoBehaviour
             if (platform.GetComponent<Platform>().color != "Gray") {
                 platform.SetActive(false);
             }
-        }
-
-        try {
-            TextMeshProUGUI text = GameObject.FindGameObjectWithTag("DeathCount").GetComponent<TextMeshProUGUI>();
-            text.text = "Deaths: " + deathCount;
-            Debug.Log(deathCount);
-        } catch (System.Exception e) {
-            Debug.Log("no death count" + e.Message);
         }
     }
 
