@@ -58,7 +58,7 @@ PrefabInstance:
     - target: {fileID: 8217145968472072182, guid: 68391e8353c556d4da1843c834d0e5aa, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -7539931802841506542, guid: fa96b6e8033f35148b4823a11db58bc1, type: 3}
+      objectReference: {fileID: -1098370688929273035, guid: 95e8813ec3b3581478eb433e0342d5c6, type: 3}
     - target: {fileID: 8217145968472072187, guid: 68391e8353c556d4da1843c834d0e5aa, type: 3}
       propertyPath: m_Name
       value: RedPlatform Variant

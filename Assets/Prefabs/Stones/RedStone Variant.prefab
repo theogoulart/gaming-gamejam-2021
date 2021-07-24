@@ -14,7 +14,7 @@ PrefabInstance:
     - target: {fileID: 1506733123394354799, guid: 0607c295bdfb57a4db627273f12a772f, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 243399587486041632, guid: 303ade0b66b1cc9418a036793352e314, type: 3}
+      objectReference: {fileID: 8589740745067347623, guid: c4efeb6192ba0194f8809e2f7e262893, type: 3}
     - target: {fileID: 2416455698186325574, guid: 0607c295bdfb57a4db627273f12a772f, type: 3}
       propertyPath: m_Name
       value: RedStone Variant
