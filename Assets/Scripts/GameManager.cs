@@ -62,7 +62,11 @@ public class GameManager : MonoBehaviour
 
     public void NextLevel()
     {
-        LoadLevelScene(++levelIndex);
+        try {
+            LoadLevelScene(++levelIndex);
+        } catch (System.Exception excpt) {
+            RestartLevel();
+        }
     }
 
     public void NewGame()
