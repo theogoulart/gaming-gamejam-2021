@@ -29,6 +29,7 @@ public class Stone : MonoBehaviour
         foreach (var p in platforms)
         {
             p.SetActive(true);
+            FMODUnity.RuntimeManager.PlayOneShot("event:/sfx/char/char_transform", transform.position);
         }
 
         foreach (var p in platformsToDisable)
