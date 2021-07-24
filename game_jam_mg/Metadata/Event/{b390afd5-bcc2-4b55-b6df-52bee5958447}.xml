@@ -60,7 +60,7 @@
 	<object class="MarkerTrack" id="{e8110cf1-7ecc-4a71-b4ce-44d1e2d423b4}" />
 	<object class="GroupTrack" id="{62d52bed-9a71-485a-939a-540efb8b6823}">
 		<relationship name="modules">
-			<destination>{b5a469d9-c346-4937-a313-937b3843309a}</destination>
+			<destination>{290cf2c2-3395-4b55-9a86-0fc1a4459e34}</destination>
 		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{1e0d1cb7-5e18-42c9-b1ea-fcb121408295}</destination>
@@ -68,7 +68,7 @@
 	</object>
 	<object class="Timeline" id="{deb8a027-d7c7-41e1-9a08-b781ac9c4906}">
 		<relationship name="modules">
-			<destination>{b5a469d9-c346-4937-a313-937b3843309a}</destination>
+			<destination>{290cf2c2-3395-4b55-9a86-0fc1a4459e34}</destination>
 		</relationship>
 		<relationship name="markers">
 			<destination>{f838d706-298b-4a8a-b076-0d4dd93ea264}</destination>
@@ -91,18 +91,17 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{9bbb26cc-3219-480a-83ab-2c9b55f35c89}" />
-	<object class="MultiSound" id="{b5a469d9-c346-4937-a313-937b3843309a}">
+	<object class="SingleSound" id="{290cf2c2-3395-4b55-9a86-0fc1a4459e34}">
 		<property name="length">
 			<value>62.608708333333333</value>
 		</property>
-		<relationship name="sounds">
-			<destination>{c52afa52-afb3-4eb7-bf58-ec2fe67caf5f}</destination>
-			<destination>{56a2c934-d433-4253-8363-0aa0d3040d7c}</destination>
+		<relationship name="audioFile">
+			<destination>{a543386f-b47d-4b77-897e-3b54c8c33193}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{1e0d1cb7-5e18-42c9-b1ea-fcb121408295}">
 		<property name="volume">
-			<value>-22.5</value>
+			<value>-10</value>
 		</property>
 		<property name="name">
 			<value>Audio 1</value>
@@ -142,16 +141,6 @@
 	</object>
 	<object class="MixerBusPanner" id="{a44a3da3-3e88-4e25-9670-17189e027f48}" />
 	<object class="MixerBusFader" id="{2a8313c3-2572-497b-b4a6-97bb3dded7ed}" />
-	<object class="SingleSound" id="{c52afa52-afb3-4eb7-bf58-ec2fe67caf5f}">
-		<relationship name="audioFile">
-			<destination>{fd4f0c40-0158-498f-9544-998511b60e1e}</destination>
-		</relationship>
-	</object>
-	<object class="SingleSound" id="{56a2c934-d433-4253-8363-0aa0d3040d7c}">
-		<relationship name="audioFile">
-			<destination>{a543386f-b47d-4b77-897e-3b54c8c33193}</destination>
-		</relationship>
-	</object>
 	<object class="ADSRModulator" id="{db5cf6a2-d544-45e8-989f-a37d6c03e7ce}">
 		<property name="nameOfPropertyBeingModulated">
 			<value>volume</value>
