@@ -45,6 +45,14 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         // FindObjectOfType<MusicPlayer>().ChangeMusicParameter(musicProgressLevel); 
+        GameObject[] allPlatforms = GameObject.FindGameObjectsWithTag("Platform");
+
+        foreach (var platform in allPlatforms)
+        {
+            if (platform.GetComponent<Platform>().color != "Gray") {
+                platform.SetActive(false);
+            }
+        }
     }
 
     public void Continue()

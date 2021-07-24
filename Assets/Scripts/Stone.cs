@@ -8,11 +8,10 @@ public class Stone : MonoBehaviour
     private List<GameObject> platformsToDisable = new List<GameObject>();
     public string color;
 
-    private void Start()
+    private void Awake()
     {
         GameObject[] allPlatforms = GameObject.FindGameObjectsWithTag("Platform");
 
-        Debug.Log(allPlatforms.Length);
         foreach (var platform in allPlatforms)
         {
             if (platform.GetComponent<Platform>().color == color) {
