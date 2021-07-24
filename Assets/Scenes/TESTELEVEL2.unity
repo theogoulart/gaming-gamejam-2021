@@ -17593,6 +17593,10 @@ PrefabInstance:
       propertyPath: m_TileSpriteArray.Array.size
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2177497260854346269, guid: 2b78658188377a2468cbebbd1a70383a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2177497260854346270, guid: 2b78658188377a2468cbebbd1a70383a, type: 3}
       propertyPath: m_Tiles.Array.size
       value: 8
