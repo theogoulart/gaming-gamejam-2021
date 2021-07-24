@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 _wallJumpDirection;
     private CameraShake cameraShake;
 
+    private string _currentColor = "Gray";
     private bool _jump;
     private bool _isMovementFreezed;
     private bool _isDashing;
@@ -62,6 +63,7 @@ public class PlayerMovement : MonoBehaviour
 
     void ChangeColor(string color)
     {
+        _currentColor = color;
         blueBody.SetActive(color == "Blue");
         defaultBody.SetActive(color == "Gray");
         greenBody.SetActive(color == "Green");
@@ -314,6 +316,11 @@ public class PlayerMovement : MonoBehaviour
 
         if (other.CompareTag("Stone")) {
             Stone stone = other.GetComponent<Stone>();
+            if (stone.color == _currentColor) {
+                return;
+            }
+
+            _anim.SetTrigger("transform");
             ChangeColor(stone.color);
             stone.Pick();
             return;
