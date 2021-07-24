@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 using UnityEditor;
 using UnityEngine.UI;
 using FMODUnity;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,11 +14,15 @@ public class GameManager : MonoBehaviour
     public int levelIndex;
     public int musicProgressLevel;
     private CameraShake cameraShake;
-    private int deathCount = 0;
+    private int deathCount;
 
     // Start is called before the first frame update
     void Awake()
     {
+        if (instance == null) {
+            instance = this;
+        }
+
         #if UNITY_EDITOR
         if (scenes.Count == 0) {
             foreach(EditorBuildSettingsScene scene in EditorBuildSettings.scenes)
@@ -33,15 +38,14 @@ public class GameManager : MonoBehaviour
         scenes.Add("Prototype 1");
         scenes.Add("Prototype 2");
         #endif
-        instance = this;
         levelIndex = PlayerPrefs.GetInt("LastLevelReached");
-        cameraShake = GameObject.FindGameObjectWithTag("CameraPrefab").GetComponent<CameraShake>();
-    }
+        deathCount = PlayerPrefs.GetInt("DeathCount");
 
-    // Update is called once per frame
-    void Update()
-    {
-       
+        try {
+            GameObject.FindGameObjectWithTag("CameraPrefab").TryGetComponent<CameraShake>(out cameraShake);
+        } catch (System.Exception e) {
+            Debug.Log("no camera shake" + e.Message);
+        }
     }
 
     void Start()
@@ -56,9 +60,13 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        Text text = GameObject.FindGameObjectWithTag("DeathCount").GetComponent<Text>();
-        Debug.Log(text);
-        text.text = "Deaths: " + deathCount;
+        try {
+            TextMeshProUGUI text = GameObject.FindGameObjectWithTag("DeathCount").GetComponent<TextMeshProUGUI>();
+            text.text = "Deaths: " + deathCount;
+            Debug.Log(deathCount);
+        } catch (System.Exception e) {
+            Debug.Log("no death count" + e.Message);
+        }
     }
 
     public void Continue()
@@ -85,19 +93,20 @@ public class GameManager : MonoBehaviour
 
     public void NewGame()
     {
+        PlayerPrefs.SetInt("DeathCount", 0);
         LoadLevelScene(0);
     }
 
     public void GameOver()
     {
         cameraShake.Shake(0.05f, 0.1f);
+        PlayerPrefs.SetInt("DeathCount", ++deathCount);
         StartCoroutine(OnGameOver());
     }
 
     IEnumerator OnGameOver()
     {
         yield return new WaitForSeconds(.5f);
-        deathCount++;
         RestartLevel();
     }
 
