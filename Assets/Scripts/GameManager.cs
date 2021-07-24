@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEditor;
+using UnityEngine.UI;
 using FMODUnity;
 
 public class GameManager : MonoBehaviour
@@ -12,6 +13,7 @@ public class GameManager : MonoBehaviour
     public int levelIndex;
     public int musicProgressLevel;
     private CameraShake cameraShake;
+    private int deathCount = 0;
 
     // Start is called before the first frame update
     void Awake()
@@ -53,6 +55,10 @@ public class GameManager : MonoBehaviour
                 platform.SetActive(false);
             }
         }
+
+        Text text = GameObject.FindGameObjectWithTag("DeathCount").GetComponent<Text>();
+        Debug.Log(text);
+        text.text = "Deaths: " + deathCount;
     }
 
     public void Continue()
@@ -91,6 +97,7 @@ public class GameManager : MonoBehaviour
     IEnumerator OnGameOver()
     {
         yield return new WaitForSeconds(.5f);
+        deathCount++;
         RestartLevel();
     }
 

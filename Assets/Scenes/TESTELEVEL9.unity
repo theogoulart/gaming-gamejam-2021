@@ -1673,11 +1673,11 @@ GameObject:
   - component: {fileID: 306849967}
   m_Layer: 8
   m_Name: RemovableWall
-  m_TagString: Untagged
+  m_TagString: RemovableWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &306849966
 Transform:
   m_ObjectHideFlags: 0
@@ -1709,7 +1709,17 @@ CompositeCollider2D:
   m_GeometryType: 0
   m_GenerationType: 0
   m_EdgeRadius: 0
-  m_ColliderPaths: []
+  m_ColliderPaths:
+  - m_Collider: {fileID: 306849969}
+    m_ColliderPaths:
+    - - X: -80000000
+        Y: 70000000
+      - X: -50000000
+        Y: 70000000
+      - X: -50000000
+        Y: 80000000
+      - X: -80000000
+        Y: 80000000
   m_CompositePaths:
     m_Paths:
     - - {x: -5.000029, y: 7}

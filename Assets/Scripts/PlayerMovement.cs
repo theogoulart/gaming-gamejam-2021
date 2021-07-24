@@ -325,6 +325,13 @@ public class PlayerMovement : MonoBehaviour
             stone.Pick();
             return;
         }
+
+        if (other.CompareTag("Coin")) {
+            Coin coin = other.GetComponent<Coin>();
+            cameraShake.Shake(0.02f, 0.1f);
+            coin.PickCoin();
+            return;
+        }
     }
 
     IEnumerator OnWallJump()

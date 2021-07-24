@@ -11,6 +11,7 @@ TagManager:
   - Platform
   - Coin
   - CameraPrefab
+  - RemovableWall
   layers:
   - Default
   - TransparentFX
