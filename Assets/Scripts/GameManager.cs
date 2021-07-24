@@ -47,10 +47,13 @@ public class GameManager : MonoBehaviour
         levelIndex = PlayerPrefs.GetInt("LastLevelReached");
         deathCount = PlayerPrefs.GetInt("DeathCount");
 
-        try {
-            GameObject.FindGameObjectWithTag("CameraPrefab").TryGetComponent<CameraShake>(out cameraShake);
-        } catch (System.Exception e) {
-            Debug.Log("no camera shake" + e.Message);
+        GameObject camShakeObj = GameObject.FindGameObjectWithTag("CameraPrefab");
+        if (camShakeObj != null) {
+            try {
+                cameraShake = camShakeObj.GetComponent<CameraShake>();
+            } catch (System.Exception e) {
+                Debug.Log("no camera shake" + e.Message);
+            }
         }
     }
 
@@ -64,14 +67,6 @@ public class GameManager : MonoBehaviour
             if (platform.GetComponent<Platform>().color != "Gray") {
                 platform.SetActive(false);
             }
-        }
-
-        try {
-            TextMeshProUGUI text = GameObject.FindGameObjectWithTag("DeathCount").GetComponent<TextMeshProUGUI>();
-            text.text = "Deaths: " + deathCount;
-            Debug.Log(deathCount);
-        } catch (System.Exception e) {
-            Debug.Log("no death count" + e.Message);
         }
     }
 
