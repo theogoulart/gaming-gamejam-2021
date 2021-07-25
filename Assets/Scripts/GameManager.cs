@@ -100,6 +100,7 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
+        Debug.Log("GameOver");
         cameraShake.Shake(0.05f, 0.1f);
         PlayerPrefs.SetInt("DeathCount", ++deathCount);
         StartCoroutine(OnGameOver());

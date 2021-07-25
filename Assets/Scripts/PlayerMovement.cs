@@ -132,6 +132,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Die()
     {
+        Debug.Log("Die");
         _rig.velocity = Vector2.zero;
         _rig.bodyType = RigidbodyType2D.Kinematic;
         _isMovementFreezed = true;
@@ -272,10 +273,14 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        Debug.Log("OnTriggerEnter2D");
         if (other.CompareTag("Hazard")) {
+            Debug.Log("Hazard");
             Spikes spike = other.GetComponent<Spikes>();
             if (spike != null) {
+                Debug.Log("Spike");
                 if (spike.pointingDirection == Vector3.up) {
+                    Debug.Log("up");
                     Collider2D[] col = Physics2D.OverlapCircleAll(transform.position + (Vector3.down * 0.5f), 0.5f);
                     foreach (var item in col)
                     {
@@ -284,6 +289,7 @@ public class PlayerMovement : MonoBehaviour
                         }
                     }
                 } else if (spike.pointingDirection == Vector3.right) {
+                    Debug.Log("right");
                     Collider2D[] col = Physics2D.OverlapCircleAll(transform.position + (Vector3.left * 0.5f), 0.5f);
                     foreach (var item in col)
                     {
@@ -292,6 +298,7 @@ public class PlayerMovement : MonoBehaviour
                         }
                     }
                 } else if (spike.pointingDirection == Vector3.down) {
+                    Debug.Log("down");
                     Collider2D[] col = Physics2D.OverlapCircleAll(transform.position + (Vector3.up * 0.5f), 0.5f);
                     foreach (var item in col)
                     {
@@ -300,6 +307,7 @@ public class PlayerMovement : MonoBehaviour
                         }
                     }
                 } else if (spike.pointingDirection == Vector3.left) {
+                    Debug.Log("left");
                     Collider2D[] col = Physics2D.OverlapCircleAll(transform.position + (Vector3.right * 0.5f), 0.5f);
                     foreach (var item in col)
                     {
