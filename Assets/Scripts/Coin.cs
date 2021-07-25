@@ -19,6 +19,7 @@ public class Coin : MonoBehaviour
     public void PickCoin()
     {
         GameObject[] walls = GameObject.FindGameObjectsWithTag("RemovableWall");
+        FMODUnity.RuntimeManager.PlayOneShot("event:/sfx/misc/get_item", transform.position);
         foreach (var wall in walls)
         {
             wall.SetActive(false);
